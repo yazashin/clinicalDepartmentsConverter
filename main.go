@@ -1,4 +1,4 @@
-package main
+package clinicaldepartmentsconverter
 
 import (
 	"fmt"
@@ -90,7 +90,8 @@ func LongNameList() []string {
 	return ks
 }
 
-func main() {
+// Test test
+func Test() {
 	fmt.Println(GetShortName("アレルギー科"))
 
 	fmt.Println(GetLongName("アレ"))
