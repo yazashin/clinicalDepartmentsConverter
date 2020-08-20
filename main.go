@@ -1,9 +1,6 @@
 package clinicaldepartmentsconverter
 
-import (
-	"fmt"
-	"strings"
-)
+import "sort"
 
 // 診療科名の略称との対応表
 // https://kouseikyoku.mhlw.go.jp/kinki/tyousa/000090952.pdf
@@ -78,6 +75,7 @@ func ShortNameList() []string {
 	for _, v := range departmentMap {
 		vs = append(vs, v)
 	}
+	sort.Strings(vs)
 	return vs
 }
 
@@ -87,16 +85,6 @@ func LongNameList() []string {
 	for k := range departmentMap {
 		ks = append(ks, k)
 	}
+	sort.Strings(ks)
 	return ks
-}
-
-// Test test
-func Test() {
-	fmt.Println(GetShortName("アレルギー科"))
-
-	fmt.Println(GetLongName("アレ"))
-
-	fmt.Println(strings.Join(LongNameList(), ", "))
-
-	fmt.Println(strings.Join(ShortNameList(), ", "))
 }
